@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Markoweb - Pravljenje sajtova</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; color: #333; }
+    header { background-color: #0078d7; color: white; padding: 20px 10px; text-align: center; }
+    header h1 { margin: 0; font-size: 2em; }
+    main { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+    main h2 { color: #004f8c; }
+    main p { font-size: 1.1em; margin: 20px 0; }
+    .phone { font-size: 1.5em; font-weight: bold; color: #004f8c; margin: 30px 0; }
+    .btn-contact { display: inline-block; background-color: #004f8c; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 1.2em; transition: background-color 0.3s ease; margin: 10px; }
+    .btn-contact:hover { background-color: #003d6e; }
+    .portfolio { margin: 40px 0; padding: 30px; background: #f8f9fa; border-radius: 8px; }
+    .portfolio h3 { color: #004f8c; margin-bottom: 20px; }
+
+    /* Slideshow galerija */
+    .slideshow {
+      position: relative;
+      max-width: 500px;
+      margin: 20px auto 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      background: white;
+    }
+    .slide {
+      display: none;
+      text-decoration: none;
+    }
+    .slide.active {
+      display: block;
+      animation: fade 0.6s ease;
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    .slide-caption {
+      padding: 12px;
+      background: white;
+      color: #004f8c;
+      font-weight: bold;
+      text-align: center;
+    }
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 15px 0 5px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #cbd5e0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border: none;
+      padding: 0;
+    }
+    .dot.active {
+      background: #004f8c;
+    }
+    .slideshow-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      font-size: 1.5em;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .slideshow-nav:hover { background: rgba(0,0,0,0.65); }
+    .slideshow-prev { left: 10px; }
+    .slideshow-next { right: 10px; }
+
+    footer { background-color: #0078d7; color: white; padding: 20px 10px; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Markoweb</h1>
+    <p>Profesionalno pravljenje sajtova po meri</p>
+  </header>
+
+  <main>
+    <h2>Želite moderan i funkcionalan sajt?</h2>
+    <p>Markoweb je tu da vam pomogne da dobijete sajt koji će istaknuti vaš biznis i privući klijente.</p>
+    <p>Brzo, kvalitetno i po pristupačnoj ceni.</p>
+
+    <div class="portfolio">
+      <h3>Pogledajte naše radove:</h3>
+
+      <div class="slideshow" id="slideshow">
+        <button class="slideshow-nav slideshow-prev" onclick="changeSlide(-1)" aria-label="Prethodna slika">&#10094;</button>
+        <button class="slideshow-nav slideshow-next" onclick="changeSlide(1)" aria-label="Sledeća slika">&#10095;</button>
+
+        <a href="https://kikice.in.rs" target="_blank" class="slide active">
+          <img src="kikice-screenshot.webp" alt="Kikice - Galerija Kikica" width="400" height="300" fetchpriority="high" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EKikice.in.rs%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">kikice.in.rs</div>
+        </a>
+
+        <a href="https://bixi.beauty" target="_blank" class="slide">
+          <img src="Screenshot_bixi.webp" alt="Bixi Beauty - Kozmetički Salon" width="400" height="300" fetchpriority="high" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Ebixi.beauty%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">bixi.beauty</div>
+        </a>
+
+        <a href="https://omoljica.in.rs" target="_blank" class="slide">
+          <img src="Screenshot 2026-02-17 195851.webp" alt="Omoljica - Prodaja Cvetnih Aranžmana" width="400" height="300" fetchpriority="high" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EOmoljica.in.rs%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">omoljica.in.rs</div>
+        </a>
+
+        <a href="https://www.lazarstojanoski.com" target="_blank" class="slide">
+          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/lakiSs.png" alt="Lazar Stojanovski" />
+          <div class="slide-caption">lazarstojanoski.com</div>
+        </a>
+
+        <a href="https://dodatni123.netlify.app" target="_blank" class="slide">
+          <img src="dodatni.png" alt="dodatni" />
+          <div class="slide-caption">dodatni123.netlify.app</div>
+        </a>
+      </div>
+
+      <div class="slideshow-dots" id="slideshow-dots"></div>
+    </div>
+
+    <div class="phone">
+      Pozovite nas: <a href="tel:+381601113106" style="color:#004f8c; text-decoration:none;">060 111 3106</a>
+    </div>
+
+    <a href="tel:+381601113106" class="btn-contact">Kontaktirajte nas</a>
+  </main>
+
+  <footer>
+    <p>© Markoweb. Sva prava zadržana.</p>
+  </footer>
+
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('#slideshow .slide');
+      const dotsContainer = document.getElementById('slideshow-dots');
+      let current = 0;
+      let timer;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Slika ' + (i + 1));
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+      const dots = dotsContainer.querySelectorAll('.dot');
+
+      function showSlide(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function goToSlide(index) {
+        showSlide(index);
+        resetTimer();
+      }
+
+      window.changeSlide = function(direction) {
+        showSlide(current + direction);
+        resetTimer();
+      };
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => showSlide(current + 1), 4000);
+      }
+
+      resetTimer();
+    })();
+  </script>
+</body>
+</html>
