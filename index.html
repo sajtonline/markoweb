@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Markoweb - Website Development</title>
+  <meta name="description" content="Markoweb - professional custom website development." />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; color: #333; }
+    header { background-color: #0078d7; color: white; padding: 20px 10px; text-align: center; position: relative; }
+    header h1 { margin: 0; font-size: 2em; }
+    main { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+    main h2 { color: #004f8c; }
+    main p { font-size: 1.1em; margin: 20px 0; }
+    .phone { font-size: 1.5em; font-weight: bold; color: #004f8c; margin: 30px 0; }
+    .btn-contact { display: inline-block; background-color: #004f8c; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-size: 1.2em; transition: background-color 0.3s ease; margin: 10px; }
+    .btn-contact:hover { background-color: #003d6e; }
+    .portfolio { margin: 40px 0; padding: 30px; background: #f8f9fa; border-radius: 8px; }
+    .portfolio h3 { color: #004f8c; margin-bottom: 20px; }
+
+    /* Language switcher */
+    .lang-switch {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: flex;
+      gap: 6px;
+    }
+    .lang-btn {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 0.9em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.2); }
+    .lang-btn.active { background: white; color: #0078d7; }
+
+    /* Slideshow galerija */
+    .slideshow {
+      position: relative;
+      max-width: 500px;
+      margin: 20px auto 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      background: white;
+    }
+    .slide {
+      display: none;
+      text-decoration: none;
+    }
+    .slide.active {
+      display: block;
+      animation: fade 0.6s ease;
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .slide img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    .slide-caption {
+      padding: 12px;
+      background: white;
+      color: #004f8c;
+      font-weight: bold;
+      text-align: center;
+    }
+    .slideshow-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 15px 0 5px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #cbd5e0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border: none;
+      padding: 0;
+    }
+    .dot.active {
+      background: #004f8c;
+    }
+    .slideshow-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      font-size: 1.5em;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .slideshow-nav:hover { background: rgba(0,0,0,0.65); }
+    .slideshow-prev { left: 10px; }
+    .slideshow-next { right: 10px; }
+
+    footer { background-color: #0078d7; color: white; padding: 20px 10px; text-align: center; }
+
+    @media (max-width: 480px) {
+      main { margin: 20px 10px; padding: 20px; }
+      .lang-switch { position: static; justify-content: center; margin-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="language">
+      <button type="button" class="lang-btn active" data-lang="en">EN</button>
+      <button type="button" class="lang-btn" data-lang="sr">SR</button>
+    </div>
+    <h1>Markoweb</h1>
+    <p data-i18n="tagline">Professional custom website development</p>
+  </header>
+
+  <main>
+    <h2 data-i18n="heading">Want a modern and functional website?</h2>
+    <p data-i18n="intro1">Markoweb is here to help you get a website that will make your business stand out and attract clients.</p>
+    <p data-i18n="intro2">Fast, high quality and at an affordable price.</p>
+
+    <div class="portfolio">
+      <h3 data-i18n="portfolio">Check out our work:</h3>
+
+      <div class="slideshow" id="slideshow">
+        <button type="button" class="slideshow-nav slideshow-prev" onclick="changeSlide(-1)" data-i18n-aria="prev" aria-label="Previous image">&#10094;</button>
+        <button type="button" class="slideshow-nav slideshow-next" onclick="changeSlide(1)" data-i18n-aria="next" aria-label="Next image">&#10095;</button>
+
+        <a href="https://kikice.in.rs" target="_blank" rel="noopener noreferrer" class="slide active">
+          <img src="kikice-screenshot.webp" alt="Kikice - Galerija Kikica" width="400" height="300" fetchpriority="high" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EKikice.in.rs%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">kikice.in.rs</div>
+        </a>
+
+        <a href="https://bixi.beauty" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="Screenshot_bixi.webp" alt="Bixi Beauty - Kozmetički Salon" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Ebixi.beauty%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">bixi.beauty</div>
+        </a>
+<!--
+        <a href="https://omoljica.in.rs" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="Screenshot%202026-02-17%20195851.webp" alt="Omoljica - Prodaja Cvetnih Aranžmana" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EOmoljica.in.rs%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">omoljica.in.rs</div>
+        </a>
+-->
+        <a href="https://www.lazarstojanoski.com" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/lakiSs.png" alt="Lazar Stojanovski" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Elazarstojanoski.com%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">lazarstojanoski.com</div>
+        </a>
+
+        <a href="https://damienarts.gt.tc" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/damienarts.png" alt="Damien Arts" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Edamienarts.gt.tc%3C/text%3E%3C/svg%3E'" />
+          <div class="slide-caption">damienarts.gt.tc</div>
+        </a>
+      </div>
+
+      <div class="slideshow-dots" id="slideshow-dots"></div>
+    </div>
+
+    <div class="phone">
+      <span data-i18n="call">Call us:</span> <a href="tel:+381601113106" style="color:#004f8c; text-decoration:none;">060 111 3106</a>
+    </div>
+
+    <a href="tel:+381601113106" class="btn-contact" data-i18n="contact">Contact us</a>
+  </main>
+
+  <footer>
+    <p data-i18n="footer">© Markoweb. All rights reserved.</p>
+  </footer>
+
+  <script>
+    /* ===== Translations (English is the default and loads first) ===== */
+    (function() {
+      const translations = {
+        en: {
+          title: 'Markoweb - Website Development',
+          description: 'Markoweb - professional custom website development.',
+          tagline: 'Professional custom website development',
+          heading: 'Want a modern and functional website?',
+          intro1: 'Markoweb is here to help you get a website that will make your business stand out and attract clients.',
+          intro2: 'Fast, high quality and at an affordable price.',
+          portfolio: 'Check out our work:',
+          call: 'Call us:',
+          contact: 'Contact us',
+          footer: '© Markoweb. All rights reserved.',
+          prev: 'Previous image',
+          next: 'Next image',
+          image: 'Image ',
+          language: 'Language'
+        },
+        sr: {
+          title: 'Markoweb - Pravljenje sajtova',
+          description: 'Markoweb - profesionalno pravljenje sajtova po meri.',
+          tagline: 'Profesionalno pravljenje sajtova po meri',
+          heading: 'Želite moderan i funkcionalan sajt?',
+          intro1: 'Markoweb je tu da vam pomogne da dobijete sajt koji će istaknuti vaš biznis i privući klijente.',
+          intro2: 'Brzo, kvalitetno i po pristupačnoj ceni.',
+          portfolio: 'Pogledajte naše radove:',
+          call: 'Pozovite nas:',
+          contact: 'Kontaktirajte nas',
+          footer: '© Markoweb. Sva prava zadržana.',
+          prev: 'Prethodna slika',
+          next: 'Sledeća slika',
+          image: 'Slika ',
+          language: 'Jezik'
+        }
+      };
+
+      const DEFAULT_LANG = 'en';
+      let currentLang = DEFAULT_LANG;
+
+      function applyLang(lang) {
+        if (!translations[lang]) lang = DEFAULT_LANG;
+        currentLang = lang;
+        const t = translations[lang];
+
+        document.documentElement.lang = lang;
+        document.title = t.title;
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute('content', t.description);
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (t[key]) el.textContent = t[key];
+        });
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+          const key = el.getAttribute('data-i18n-aria');
+          if (t[key]) el.setAttribute('aria-label', t[key]);
+        });
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+          dot.setAttribute('aria-label', t.image + (i + 1));
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+      }
+
+      window.getLang = function() { return currentLang; };
+      window.t = function(key) { return translations[currentLang][key]; };
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          applyLang(btn.dataset.lang);
+          try { localStorage.setItem('markoweb-lang', btn.dataset.lang); } catch (e) {}
+        });
+      });
+
+      // Expose so the slideshow can re-label dots after they are created
+      window.applyLang = applyLang;
+
+      // Start in English; use a previously chosen language only if the visitor picked one
+      let saved = null;
+      try { saved = localStorage.getItem('markoweb-lang'); } catch (e) {}
+      window.__initialLang = (saved && translations[saved]) ? saved : DEFAULT_LANG;
+    })();
+
+    /* ===== Slideshow ===== */
+    (function() {
+      const slides = document.querySelectorAll('#slideshow .slide');
+      const dotsContainer = document.getElementById('slideshow-dots');
+      let current = 0;
+      let timer;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', window.t('image') + (i + 1));
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+      const dots = dotsContainer.querySelectorAll('.dot');
+
+      function showSlide(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function goToSlide(index) {
+        showSlide(index);
+        resetTimer();
+      }
+
+      window.changeSlide = function(direction) {
+        showSlide(current + direction);
+        resetTimer();
+      };
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => showSlide(current + 1), 4000);
+      }
+
+      resetTimer();
+
+      // Apply the initial language now that the dots exist
+      window.applyLang(window.__initialLang);
+    })();
+  </script>
+</body>
+</html>
