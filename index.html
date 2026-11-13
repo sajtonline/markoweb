@@ -7,7 +7,7 @@
   <meta name="description" content="Markoweb - professional custom website development." />
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; color: #333; }
-    header { background-color: #0078d7; color: white; padding: 20px 10px; text-align: center; position: relative; }
+    header { background-color: #0067b8; color: white; padding: 20px 10px; text-align: center; position: relative; }
     header h1 { margin: 0; font-size: 2em; }
     main { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
     main h2 { color: #004f8c; }
@@ -38,9 +38,9 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
     .lang-btn:hover { background: rgba(255,255,255,0.2); }
-    .lang-btn.active { background: white; color: #0078d7; }
+    .lang-btn.active { background: white; color: #0067b8; }
 
-    /* Slideshow galerija */
+    /* Slideshow */
     .slideshow {
       position: relative;
       max-width: 500px;
@@ -61,6 +61,9 @@
     @keyframes fade {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .slide.active { animation: none; }
     }
     .slide img {
       width: 100%;
@@ -115,7 +118,7 @@
     .slideshow-prev { left: 10px; }
     .slideshow-next { right: 10px; }
 
-    footer { background-color: #0078d7; color: white; padding: 20px 10px; text-align: center; }
+    footer { background-color: #0067b8; color: white; padding: 20px 10px; text-align: center; }
 
     @media (max-width: 480px) {
       main { margin: 20px 10px; padding: 20px; }
@@ -146,27 +149,27 @@
         <button type="button" class="slideshow-nav slideshow-next" onclick="changeSlide(1)" data-i18n-aria="next" aria-label="Next image">&#10095;</button>
 
         <a href="https://kikice.in.rs" target="_blank" rel="noopener noreferrer" class="slide active">
-          <img src="kikice-screenshot.webp" alt="Kikice - Galerija Kikica" width="400" height="300" fetchpriority="high" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EKikice.in.rs%3C/text%3E%3C/svg%3E'" />
+          <img src="kikice-screenshot.webp" alt="Kikice website" width="400" height="300" fetchpriority="high" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EKikice.in.rs%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">kikice.in.rs</div>
         </a>
 
         <a href="https://bixi.beauty" target="_blank" rel="noopener noreferrer" class="slide">
-          <img src="Screenshot_bixi.webp" alt="Bixi Beauty - Kozmetički Salon" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Ebixi.beauty%3C/text%3E%3C/svg%3E'" />
+          <img src="Screenshot_bixi.webp" alt="Bixi Beauty website" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Ebixi.beauty%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">bixi.beauty</div>
         </a>
 <!--
         <a href="https://omoljica.in.rs" target="_blank" rel="noopener noreferrer" class="slide">
-          <img src="Screenshot%202026-02-17%20195851.webp" alt="Omoljica - Prodaja Cvetnih Aranžmana" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EOmoljica.in.rs%3C/text%3E%3C/svg%3E'" />
+          <img src="Screenshot%202026-02-17%20195851.webp" alt="Omoljica website" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EOmoljica.in.rs%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">omoljica.in.rs</div>
         </a>
 -->
         <a href="https://www.lazarstojanoski.com" target="_blank" rel="noopener noreferrer" class="slide">
-          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/lakiSs.png" alt="Lazar Stojanovski" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Elazarstojanoski.com%3C/text%3E%3C/svg%3E'" />
+          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/lakiSs.png" alt="Lazar Stojanovski website" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Elazarstojanoski.com%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">lazarstojanoski.com</div>
         </a>
 
         <a href="https://damienarts.gt.tc" target="_blank" rel="noopener noreferrer" class="slide">
-          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/damienarts.webp" alt="Damien Arts" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Edamienarts.gt.tc%3C/text%3E%3C/svg%3E'" />
+          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/damienarts.webp" alt="Damien Arts website" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Edamienarts.gt.tc%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">damienarts.gt.tc</div>
         </a>
       </div>
@@ -312,6 +315,13 @@
       }
 
       resetTimer();
+
+      // Pause auto-play on hover or keyboard focus
+      const ss = document.getElementById('slideshow');
+      ss.addEventListener('mouseenter', () => clearInterval(timer));
+      ss.addEventListener('mouseleave', resetTimer);
+      ss.addEventListener('focusin', () => clearInterval(timer));
+      ss.addEventListener('focusout', resetTimer);
 
       // Apply the initial language now that the dots exist
       window.applyLang(window.__initialLang);
