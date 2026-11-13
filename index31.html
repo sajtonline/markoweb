@@ -125,7 +125,7 @@
 </head>
 <body>
   <header>
-    <div class="lang-switch" role="group" aria-label="Language">
+    <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="language">
       <button type="button" class="lang-btn active" data-lang="en">EN</button>
       <button type="button" class="lang-btn" data-lang="sr">SR</button>
     </div>
@@ -142,32 +142,31 @@
       <h3 data-i18n="portfolio">Check out our work:</h3>
 
       <div class="slideshow" id="slideshow">
-        <button class="slideshow-nav slideshow-prev" onclick="changeSlide(-1)" data-i18n-aria="prev" aria-label="Previous image">&#10094;</button>
-        <button class="slideshow-nav slideshow-next" onclick="changeSlide(1)" data-i18n-aria="next" aria-label="Next image">&#10095;</button>
+        <button type="button" class="slideshow-nav slideshow-prev" onclick="changeSlide(-1)" data-i18n-aria="prev" aria-label="Previous image">&#10094;</button>
+        <button type="button" class="slideshow-nav slideshow-next" onclick="changeSlide(1)" data-i18n-aria="next" aria-label="Next image">&#10095;</button>
 
-        <a href="https://kikice.in.rs" target="_blank" class="slide active">
-          <img src="kikice-screenshot.webp" alt="Kikice - Galerija Kikica" width="400" height="300" fetchpriority="high" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EKikice.in.rs%3C/text%3E%3C/svg%3E'" />
+        <a href="https://kikice.in.rs" target="_blank" rel="noopener noreferrer" class="slide active">
+          <img src="kikice-screenshot.webp" alt="Kikice - Galerija Kikica" width="400" height="300" fetchpriority="high" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EKikice.in.rs%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">kikice.in.rs</div>
         </a>
 
-        <a href="https://bixi.beauty" target="_blank" class="slide">
-          <img src="Screenshot_bixi.webp" alt="Bixi Beauty - Kozmetički Salon" width="400" height="300" fetchpriority="high" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Ebixi.beauty%3C/text%3E%3C/svg%3E'" />
+        <a href="https://bixi.beauty" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="Screenshot_bixi.webp" alt="Bixi Beauty - Kozmetički Salon" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Ebixi.beauty%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">bixi.beauty</div>
         </a>
 <!--
-        <a href="https://omoljica.in.rs" target="_blank" class="slide">
-          <img src="Screenshot 2026-02-17 195851.webp" alt="Omoljica - Prodaja Cvetnih Aranžmana" width="400" height="300" fetchpriority="high" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EOmoljica.in.rs%3C/text%3E%3C/svg%3E'" />
+        <a href="https://omoljica.in.rs" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="Screenshot%202026-02-17%20195851.webp" alt="Omoljica - Prodaja Cvetnih Aranžmana" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3EOmoljica.in.rs%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">omoljica.in.rs</div>
         </a>
 -->
-        <a href="https://www.lazarstojanoski.com" target="_blank" class="slide">
-          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/lakiSs.png" alt="Lazar Stojanovski" />
+        <a href="https://www.lazarstojanoski.com" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/lakiSs.png" alt="Lazar Stojanovski" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Elazarstojanoski.com%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">lazarstojanoski.com</div>
         </a>
 
-        <a href="damienarts.gt.tc target="_blank" class="slide">
-          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/damienarts.png" alt="damienarts.gt.t" />
-         
+        <a href="https://damienarts.gt.tc" target="_blank" rel="noopener noreferrer" class="slide">
+          <img src="https://raw.githubusercontent.com/ucenjejezika/engleski/main/damienarts.png" alt="Damien Arts" width="400" height="300" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%230078d7%22 font-size=%2224%22 font-family=%22Arial%22%3Edamienarts.gt.tc%3C/text%3E%3C/svg%3E'" />
           <div class="slide-caption">damienarts.gt.tc</div>
         </a>
       </div>
@@ -203,7 +202,8 @@
           footer: '© Markoweb. All rights reserved.',
           prev: 'Previous image',
           next: 'Next image',
-          image: 'Image '
+          image: 'Image ',
+          language: 'Language'
         },
         sr: {
           title: 'Markoweb - Pravljenje sajtova',
@@ -218,7 +218,8 @@
           footer: '© Markoweb. Sva prava zadržana.',
           prev: 'Prethodna slika',
           next: 'Sledeća slika',
-          image: 'Slika '
+          image: 'Slika ',
+          language: 'Jezik'
         }
       };
 
@@ -279,6 +280,7 @@
 
       slides.forEach((_, i) => {
         const dot = document.createElement('button');
+        dot.type = 'button';
         dot.className = 'dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('aria-label', window.t('image') + (i + 1));
         dot.addEventListener('click', () => goToSlide(i));
